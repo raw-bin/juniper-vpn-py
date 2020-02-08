@@ -364,13 +364,13 @@ if __name__ == "__main__":
             if args.__dict__[arg] is None:
                 try:
                     args.__dict__[arg] = config.get('vpn', arg)
-                except configparser.NoOptionError:
+                except ConfigParser.NoOptionError:
                     pass
 
         if not args.enable_funk:
             try:
                 val = config.get('vpn', 'enable_funk').lower()
-            except configparser.NoOptionError:
+            except ConfigParser.NoOptionError:
                 pass
             else:
                 if val in ['true', '1', 'yes', 'enable', 'on']:
